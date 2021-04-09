@@ -1,0 +1,525 @@
+/* 
+
+    #ee3123 
+
+    #55595c
+
+*/
+
+
+
+.navbar{
+
+    display: flex;
+
+    color:rgba(0, 0, 0, 0.8);
+
+    align-items: center;
+
+    justify-content: space-around;
+
+}
+
+
+
+.nav-links{
+
+    display: flex;
+
+    justify-content: space-around;
+
+}
+
+
+
+#logo{
+
+    font-size: medium;
+
+    font-family: 'Raleway', sans-serif;
+
+    font-weight: 800;
+
+}
+
+
+
+#welcome{
+
+    font-size: small;
+
+    font-family: 'Raleway', sans-serif;
+
+    font-weight: 500;
+
+}
+
+
+
+div.nav-links>ul{
+
+    display: flex;
+
+    font-family: 'Raleway', sans-serif;
+
+    font-weight: 600;
+
+    font-size: small;
+
+    color:rgba(0, 0, 0, 0.8);
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    width: 50vw;
+
+}
+
+
+
+.nav-links ul li{
+
+    list-style: none;
+
+    justify-self: space-around;
+
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+
+
+a{
+
+    color: rgba(0, 0, 0, 0.8);
+
+    text-decoration: none;
+
+}
+
+
+
+body{
+
+    margin: 0;
+
+    padding: 0;
+
+    background-color: rgba(255, 255, 255, 1);
+
+}
+
+.asteriskField {
+    color: #EE3123;
+}
+
+*::selection{
+
+    background: rgba(175, 175, 175, 0.835);
+
+}
+
+
+
+.card-div {
+
+    min-height: 80vh;
+
+    border: 2px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 2.5em;
+
+    background-color: rgba(255, 255, 255, 0.15);
+
+    min-width: 350px;
+
+    width: 40vw;
+
+    margin: 7.5vh auto 7.5vh 10vw;
+
+    padding: 0 2.5vw;
+
+    fill-opacity: 0.5;
+
+    opacity: 1;
+
+    -webkit-backdrop-filter: blur(40px);
+
+    backdrop-filter: blur(40px);
+
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 35, 0.37 );
+
+}
+
+
+
+
+
+.header {
+
+    margin-top: 5vh;
+
+    margin-bottom: 2.5vh;
+
+    font-family: 'Raleway', sans-serif;
+
+    font-style: normal;
+
+    font-weight: 600;
+
+    font-size: xx-large;
+
+    line-height: 42px;
+
+    text-align: flex-start;
+
+    color: #000000BB;
+
+}
+
+
+
+.login-form {
+
+    min-height: 80vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    position: fixed;
+
+}
+
+
+
+form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-evenly;
+
+}
+
+
+
+label{
+
+    font-family: 'Raleway', sans-serif;
+
+    font-weight: 600;
+
+    font-style: normal;
+
+    font-size: medium;
+
+    display: block;
+
+    color: #000000EE;
+
+    margin: 0 0 1vh 0;
+
+}
+
+
+
+#forgot, #forgot:link, #forgot:visited {
+
+    text-decoration: none;
+
+    font-family: 'Raleway', sans-serif;
+
+    font-weight: 600;
+
+    font-size: medium;
+
+    color: #000000BB;
+
+    opacity: 0.35;
+
+    margin-bottom: 5vh;
+
+    transition: 500ms;
+
+    outline: none;
+
+    align-self: center;
+
+}
+
+
+
+input[type=text],  input[type=textarea], input[type=password] {
+
+    background: #eeeeeeb4;
+
+    mix-blend-mode: normal;
+
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.3);
+
+    padding-left: 5px;
+
+    border-radius: 5px;
+
+    border: 1px solid #FFFFFF00;
+
+    margin: 0.5vh 0 5vh 0vw;
+
+    height: 6.5vh;
+
+    font-family: 'Lato', sans-serif;
+
+    font-size: medium;
+
+    outline: none;
+
+    transition: ease-in-out 500ms;
+
+}
+
+
+
+input[type=text]:focus,  input[type=textarea]:focus, input[type=password]:focus {
+
+    box-shadow: 0px 4px 0px #EE3123 !important;
+
+    border: 1px solid #EE3123 !important;
+
+    background: #F9F9F9 !important;
+
+}
+
+
+
+input[type=text]:hover,  input[type=textarea]:hover, input[type=password]:hover {
+
+    box-shadow: 0px 4px 0px #ee473bb4;
+
+    border: 1px solid #ee473bb4;
+
+    background: #F5F5F5DD;  
+
+}
+
+
+
+
+
+#forgot:focus, #forgot:hover{
+
+    opacity: 0.8;
+
+}
+
+
+
+#forgot:active{
+
+    transition: 0s !important;
+
+    color: #EE3123 !important;
+
+}
+
+
+
+input[type=submit]{
+
+    background-color: #F9F9F900;
+
+    border: 1px solid #000000BB;
+
+    outline: none;
+
+    align-self: center;
+
+    border-radius: 2em;
+
+    color:#000000BB;
+
+    width: fit-content;
+
+    height: fit-content;
+
+    padding: 1vh 2vw;
+
+    font-family: 'Raleway', sans-serif;
+
+    font-weight: 600;
+
+    font-size: large;
+
+    margin: 0 0 5vh 0;
+
+    cursor: pointer;
+
+    transition: ease-in-out 500ms;
+
+}
+
+
+
+input[type=submit]:hover {
+
+    background-color: #EE3123;
+
+    border: 1px solid #EE3123;
+
+    color:rgba(255, 255, 255, 1);
+
+}
+
+
+
+img {
+
+    position: absolute;
+
+    object-fit: cover;
+
+    width: 100vw;
+
+    z-index: -1;
+
+    opacity: 0.7;
+
+    mix-blend-mode: hard-light;
+
+}
+
+
+
+.no-js #loader { display: none;  }
+
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+
+.se-pre-con {
+
+	position: fixed;
+
+	left: 0px;
+
+	top: 0px;
+
+	width: 100%;
+
+	height: 100%;
+
+	z-index: 9999;
+
+	background: url(loading.gif) center no-repeat #fff;
+
+}
+
+
+
+.key-image {
+
+    display: none;
+
+}
+
+
+
+.errorlist li{
+
+    color: red;
+
+    font-family: 'Lato', sans-serif;
+
+    font-size: medium;
+
+    list-style: none;
+
+}
+
+
+
+.errorlist {
+
+    padding: 0.5em;
+
+    border: 1px solid red;
+
+    border-radius: 1em;
+
+}
+
+
+
+@media (hover : none) {
+
+    input[type=submit]{
+
+        background-color: #EE3123;
+
+        border: 1px solid #EE3123;
+
+        color:rgba(255, 255, 255, 1);
+
+    }
+
+}
+
+
+
+@media only screen and (max-width: 640px) {
+
+    
+
+    .card-div {
+
+        width: 100vw;
+
+        margin: 0;
+
+        height: 100vh;
+
+        border-radius: 0;
+
+        padding: 0;
+
+    }
+
+
+
+    input[type=submit] {
+
+        padding: 1.5vh 5vw
+
+    }
+
+    
+
+    label{
+
+        margin: 0 0 2vh 4vw;
+
+    }
+
+    
+
+    input[type=text], input[type=password], input[type=textarea]{
+
+        margin: 0 0 0 4vw;
+
+    }
+
+    
+
+    h1{
+
+        margin: 4vw;
+
+    }
+
+}
