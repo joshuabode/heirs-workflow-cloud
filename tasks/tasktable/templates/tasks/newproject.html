@@ -1,0 +1,9 @@
+{% extends 'tasks/form.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<form method="POST"> {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Save" />
+</form>
+{% endblock %}

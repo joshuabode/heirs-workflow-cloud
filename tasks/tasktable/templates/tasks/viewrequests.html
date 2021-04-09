@@ -1,0 +1,25 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+
+{% if all_tasks %}
+
+{% for task in all_tasks %}
+{% if user_type == 'Manager' %}
+<h2><a href="/tasks/{{ task.id }}/">{{ task.name }} ({{ task.project }})</a> - <a
+                href="/tasks/{{ task.id }}/approve">Review</a></h2>
+{% elif user_type == 'Admin' %}
+<h2><a href="/tasks/{{ task.id }}/">{{ task.name }} ({{ task.project }})</a> - <a
+                href="/tasks/{{ task.id }}/pre-approve">Review</a></h2>
+{% else %}
+<h2><a href="{{ task.id }}/">{{ task.name }} ({{ task.project }})</a></h2>
+{% endif %}
+<h4>Due in {{ task.due_in }}</h4>
+<h6>{{ task.importance }}</h6>
+<p>Description: {{ task.description }}</p>
+{% endfor %}
+
+{% else %}
+<p>No ready tasks.</p>
+{% endif %}
+{% endblock %}
