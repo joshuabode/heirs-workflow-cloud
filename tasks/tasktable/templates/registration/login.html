@@ -19,11 +19,11 @@
 <body class='login-form'>
     <div class='card-div'>
         <h1 class='header'>Heirs <br> Login Portal</h1>
-        {% load crispy_forms_tags %}
+
         <form method="post" autocomplete='off'>
             {% csrf_token %}
             <input autocomplete="false" name="hidden" type="text" style="display:none;">
-            {{form|crispy}}
+            {{form}}
             <input type="submit" value="Login">
             <a id='forgot' href='/forgot-password'>forgot password?</a>
         </form>

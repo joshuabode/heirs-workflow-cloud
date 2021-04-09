@@ -2,9 +2,9 @@
 
 {% block content %}
 <h1>Editing {{ title }}</h1>
-{% load crispy_forms_tags %}
+
 <form method="POST"> {% csrf_token %}
-    {{ form|crispy }}
+    {{ form.as_p }}
     <input type="submit" value="Save" />
 </form>
 <input type="submit" value="Delete" onclick="window.location='/tasks/{{ id }}/delete';" />

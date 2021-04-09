@@ -4,9 +4,6 @@ from .models import Task, Project, Status, File
 from django.core.validators import MinLengthValidator
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.admin import widgets
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
-from tempus_dominus.widgets import DateTimePicker
 
 
 class UserLoginForm(AuthenticationForm):
@@ -29,9 +26,7 @@ class PreApprovalForm(forms.ModelForm):
             'state',
         ]
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
+
 
 
 class ApprovalForm(forms.ModelForm):
@@ -43,9 +38,6 @@ class ApprovalForm(forms.ModelForm):
             'state',
         ]
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
 
 
 class EditProjectForm(forms.ModelForm):
@@ -59,10 +51,6 @@ class EditProjectForm(forms.ModelForm):
         widgets = {
             'members': forms.CheckboxSelectMultiple(),
         }
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
 
 
 class EditTaskForm(forms.ModelForm):
@@ -81,13 +69,11 @@ class EditTaskForm(forms.ModelForm):
         widgets = {
             'description': forms.Textarea(attrs={'cols': 40, 'rows': 10}),
             'assignees': forms.CheckboxSelectMultiple(),
-            'due_date':  DateTimePicker(),
+            'due_date':  forms.DateTimeInput(),
             'references': forms.CheckboxSelectMultiple(),
         }
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
+
 
 
 class UploadFileForm(forms.ModelForm):
@@ -100,9 +86,6 @@ class UploadFileForm(forms.ModelForm):
             'file',
         ]
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
 
 
 class NewStatusForm(forms.ModelForm):
@@ -113,9 +96,6 @@ class NewStatusForm(forms.ModelForm):
             'status',
         ]
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
 
 
 class UpdateStatusForm(forms.ModelForm):
@@ -132,9 +112,6 @@ class UpdateStatusForm(forms.ModelForm):
             'submissions': forms.CheckboxSelectMultiple(),
         }
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
 
 
 class NewProjectForm(forms.ModelForm):
@@ -149,9 +126,6 @@ class NewProjectForm(forms.ModelForm):
             'members': forms.CheckboxSelectMultiple(),
         }
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
 
 
 class NewTaskForm(forms.ModelForm):
@@ -173,18 +147,14 @@ class NewTaskForm(forms.ModelForm):
             'description': forms.Textarea(attrs={'cols': 40, 'rows': 10, 'initial': 'Testing'}),
             'assignees': forms.CheckboxSelectMultiple(),
             'references': forms.CheckboxSelectMultiple(),
-            'due_date': DateTimePicker(attrs={'id': 'date-field'}),
+            'due_date': forms.DateTimeInput(attrs={'id': 'date-field'}),
         }
 
         validators = {
             'description': MinLengthValidator(limit_value=10)
         }
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_method = 'post'
-        self.helper.add_input(Submit('submit', 'Create'))
+
 
     def clean(self):
         data = self.cleaned_data
