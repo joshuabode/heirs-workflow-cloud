@@ -32,7 +32,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '/tasks/media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
 MEDIA_URL = '/media/'
 
 ALLOWED_HOSTS = ['example.com', 'www.example.com']
@@ -138,4 +138,4 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, '/static')
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
