@@ -5,6 +5,12 @@
 *.log
 *.pot
 *.pyc
+static/*.png
+static/*.ico
+static/safari-pinned-tab.svg
+static/*.webmanifest
+static/*.xml
+static/*.html
 __pycache__/
 tasks/tasktable/migrations/0*
 tasks/tasktable/static/hover3d/hover3d-master/dist/images/*
