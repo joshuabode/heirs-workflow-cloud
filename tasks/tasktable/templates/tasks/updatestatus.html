@@ -1,0 +1,14 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update Status" />
+</form>
+<div class='flex'>
+    <a class='link-button' href="/newstatus">Add a new Status</a>
+    <a class='link-button' href="/upload">Upload a different File</a>
+</div>
+{% endblock %}

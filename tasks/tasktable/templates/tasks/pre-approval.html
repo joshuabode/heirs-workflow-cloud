@@ -1,0 +1,21 @@
+{% extends 'form/base.html' %}
+
+{% block content %}
+<h1>Pre-approving {{ title }}</h1>
+{% if submit_names %}
+<h4>Submissions</h4>
+<ul>
+    {% for file in submit_names %}
+    <li><a href="/projects/{{ project }}/filespace/{{ file }}">Download {{ file }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No submissions attached</p>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" />
+</form>
+{% endblock %}

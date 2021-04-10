@@ -1,0 +1,50 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+{% if user_type == 'Admin' %}
+<div class='action-header'>
+    <h3>{{ project.name }}</h3> <a class='link-button' href="edit">Edit Project</a>
+</div>
+{% elif user_type == 'Manager' %}
+<div class='action-header'>
+    <h3>{{ project.name }}</h3> <a class='link-button' href="edit">Edit Project</a>
+</div>
+{% else %}
+<h1>{{ project.name }}</h1>
+{% endif %}
+{{ percent }}
+{% if members %}
+<h2><a href="filespace">Project Filespace</a></h2>
+<h2>Project Members</h2>
+{% for member in members %}
+<div class='person_div'>
+    <h3>{{ member.first_name }} {{ member.last_name }}</a></h3>
+    <p>Username: {{ member.username }}</p>
+    <p>Email: <a href="mailto:{{ member.email }}">{{ member.email }}</a></p>
+</div>
+{% endfor %}
+
+{% else %}
+<p>No members.</p>
+{% endif %}
+<h2>Project Tasks</h2>
+
+{% if tasks %}
+
+{% for task in tasks %}
+{% if task.approved %}
+<div class='project_div'>
+    <h2><a href="/tasks/{{ task.id }}/">{{ task.name }} - Completed</a></h2>
+</div>
+{% else %}
+<div class='project_div'>
+    <h2><a href="/tasks/{{ task.id }}/">{{ task.name }} - {{ task.state }}</a></h1>
+</div>
+{% endif %}
+{% endfor %}
+
+{% else %}
+<a href="/newtask">Add a new task</a>
+{% endif %}
+
+{% endblock %}

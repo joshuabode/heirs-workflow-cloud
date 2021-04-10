@@ -1,0 +1,10 @@
+.vscode
+.VSCodeCounter
+tasks/tasks/.env
+tasks/*.sqlite3
+*.log
+*.pot
+*.pyc
+__pycache__/
+tasks/tasktable/migrations/0*
+tasks/tasktable/static/hover3d/hover3d-master/dist/images/*
