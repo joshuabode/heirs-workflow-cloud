@@ -141,10 +141,13 @@ def home(request):
         current_user = User.objects.get(id=user_id)
         if current_user.groups.filter(name='Managers').exists():
             account_type = 'Manager'
+            base = 'tasks/tool-base.html'
         elif current_user.groups.filter(name='Admins').exists():
             account_type = 'Admin'
+            base = 'tasks/tool-base.html'
         else:
             account_type = 'Staff'
+            base = 'tasks/base.html'
         if len(ready_tasks) == 1:
             task_tasks = 'task is'
         else:
@@ -179,7 +182,8 @@ def home(request):
             'my_notifications': my_notifications,
             'my_projects': my_projects,
             'my_tasks': my_tasks,
-            'notification_count': len(my_notifications)
+            'notification_count': len(my_notifications),
+            'base': base
         }
         return HttpResponse(template.render(context, request))
     else:
