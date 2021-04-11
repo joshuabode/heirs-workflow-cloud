@@ -7,7 +7,6 @@
     <title>Heirs Workflow Cloud</title>
     <script src="https://kit.fontawesome.com/f3a98ab8b5.js" crossorigin="anonymous"></script>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
@@ -32,79 +31,32 @@
             $("#date-field").datepicker({ dateFormat: 'dd/mm/yy' }).attr("autocomplete", "off");
         });
     </script> -->
-    <script>
-        $(document).ready(function () {
-
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-                $('#content').toggleClass('ml-sidebar')
-            });
-
-        });
-    </script>
 
 
 </head>
 
 <body>
     <div class="se-pre-con"></div>
-    <div class="wrapper">
-        <div id="sidebar" class="active">
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Toolbox</h3>
-                </div>
+    <nav class="navbar navbar-light navbar-expand-lg bg-light">
+        <a class="navbar-brand" href="/user/home">
+            Heirs Workflow Cloud
+        </a>
+        <p class="font-weight-light my-auto navbar-text">Welcome {{ request.user.first_name }}</p>
 
-                <ul class="list-unstyled components">
-                    <li>
-                        <a class='link-button' href="/newtask">Add a new task</a>
-                    </li>
-                    <li>
-                        <a class='link-button' href="/tasks/manage">Manage Tasks</a>
-                    </li>
-                    <li>
-                        <a class='link-button' href="/newproject">Add a new project</a>
-                    </li>
-                    <li>
-                        <a class='link-button' href="/myprojects">Manage Projects</a>
-                    </li>
-                    <li>
-                        <a class='link-button' href="/admin/auth/user/add/">Add a new Team Member</a>
-                    </li>
-                    <li>
-                        <a class='link-button' href="/admin/auth/user/">Manage Team</a>
-                    </li>
-                </ul>
-            </nav>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="main-navbar" class="nav-links collapse navbar-collapse">
+            <ul class="ml-auto navbar-nav my-auto">
+                <li class="nav-item"><a class="nav-link" href="/user/logout">Logout</a></li>
+                <li class="nav-item"><a class="nav-link" href="/tasks">My Tasks</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/password_change/">Edit Account</a></li>
+                <li class="nav-item"><a class="nav-link" href="/myprojects">My Projects</a></li>
+            </ul>
         </div>
-        <div id="content" class="ml-sidebar">
-
-            <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
-                <button type="button" id="sidebarCollapse" class="btn btn-info mr-5">
-                    <i class="fas fa-align-left"></i>
-                    <span>Toggle Toolbox</span>
-                </button>
-                <a class="navbar-brand" href="/user/home">
-                    Heirs Workflow Cloud
-                </a>
-                <p class="ml-5 font-weight-light my-auto navbar-text">Welcome {{ request.user.first_name }}</p>
-
-                <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div id="main-navbar" class="nav-links collapse navbar-collapse">
-                    <ul class="ml-auto navbar-nav my-auto">
-                        <li class="nav-item"><a class="nav-link" href="/user/logout">Logout</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/tasks">My Tasks</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/admin/password_change/">Edit Account</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/myprojects">My Projects</a></li>
-                    </ul>
-                </div>
-            </nav>
-            {% block content %}
-            {% endblock %}
-        </div>
-    </div>
+    </nav>
+    {% block content %}
+    {% endblock%}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     {% load static %}
     <script src=" {% static 'hover3d/hover3d-master/dist/js/jquery.hover3d.min.js' %}"></script>
