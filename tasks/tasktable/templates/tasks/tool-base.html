@@ -37,7 +37,8 @@
 
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
-                $('#content').toggleClass('ml-sidebar')
+                $('.navbar-brand').toggleClass('sidebar-on')
+                $('.navbar-toggler').toggleClass('sidebar-on')
             });
 
         });

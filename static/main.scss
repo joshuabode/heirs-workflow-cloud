@@ -23,7 +23,12 @@ $enable-responsive-font-sizes: true;
         margin-left: 0;
     }
     #sidebar.active {
-        margin-left: -250px;
+        margin-left: -200px;
+    }
+    #sidebar {
+        min-width: 200px;
+        max-width: 200px;
+        min-height: 100vh;
     }
 }
 
@@ -74,4 +79,24 @@ ul ul a {
 #sidebarCollapse{
     width: 40px;
     height: 40px;
+}
+
+@include media-breakpoint-down(sm) {
+    html{
+        font-size: 0.8rem;
+    }
+    #sidebarCollapse{
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    p.navbar-text{
+        display: none;
+    }
+
+    .sidebar-on, .navbar-brand.sidebar-on{
+        display: none;
+    }
 }
