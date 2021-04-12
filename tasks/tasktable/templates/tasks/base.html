@@ -11,15 +11,28 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
         rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'date-picker/jquery-ui.css' %}">
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+        window.onload = function () {
+            document.title = companyName;
+            document.getElementById("brand").innerHTML = companyName;
+            document.getElementById("main-nav").classList.add(navbarTheme);
+        };
+    </script>
 </head>
 
 <body>
     <div class="se-pre-con"></div>
-    <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
-        <a class="navbar-brand" href="/user/home">
+    <nav id="main-nav" class="navbar navbar-expand-lg bg-primary">
+        <a id="brand" class="navbar-brand" href="/user/home">
             Heirs Workflow Cloud
         </a>
         <p class="font-weight-light my-auto navbar-text">Welcome {{ request.user.first_name }}</p>
